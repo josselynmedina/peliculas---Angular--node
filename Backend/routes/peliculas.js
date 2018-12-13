@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var path = require('path');
 var router = express.Router();
 
-mongoose.connect('mongodb://admin:admin123@ds029267.mlab.com:29267/dbpeliculas', { useMongoClient: true }, function(error) {
+mongoose.connect('mongodb://localhost/Peliculas', function(error) {
     if (error) console.error(error);
     else console.log('mongo connected');
 });
@@ -17,7 +17,7 @@ var modelSchema = mongoose.Schema({
     Pais: String,
     Rating: Number,
     Url: String
-}, { collection: 'Peliculas' });
+});
 
 var Peliculas = mongoose.model('Peliculas', modelSchema);
 
